@@ -2,10 +2,13 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "ee.offsite/wristwise",
   "title": "WristWise",
-  "description": "Ask about your sleep, heart rate and wellness trends from your smartwatch.",
-  "version": "0.1.1",
+  "description": "Ask about your sleep, heart rate, exercise and wellness trends from your smartwatch.",
+  "version": "0.3.0",
   "websiteUrl": "https://offsite.ee/wristwise/",
   "remotes": [
-    { "type": "streamable-http", "url": "https://mcp-wristwise.offsite.ee/mcp" }
+    {
+      "type": "streamable-http",
+      "url": "https://mcp-wristwise.offsite.ee/mcp"
+    }
   ]
 }

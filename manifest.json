@@ -1,0 +1,93 @@
+{
+  "manifest_version": "0.2",
+  "name": "wristwise",
+  "display_name": "WristWise",
+  "version": "0.3.0",
+  "description": "Ask Claude about your sleep, heart rate, exercise and wellness trends from your smartwatch. Read-only and privacy-first.",
+  "long_description": "WristWise connects Claude to the health data your smartwatch already collects (via Health Connect on your Android phone). Ask about last night's sleep, resting heart rate trends, exercise sessions and multi-week wellness summaries. Privacy-first design: your health history stays on your phone; the WristWise service holds no server-side database of your health data. All tools are read-only. Requires the WristWise app from Google Play: it creates the connection key this extension uses, and access stops when the key is revoked or the app is removed.",
+  "author": {
+    "name": "Offsite OÜ",
+    "email": "support@offsite.ee",
+    "url": "https://offsite.ee"
+  },
+  "homepage": "https://offsite.ee/wristwise/",
+  "documentation": "https://offsite.ee/wristwise/",
+  "support": "mailto:support@offsite.ee",
+  "icon": "icon.png",
+  "server": {
+    "type": "node",
+    "entry_point": "server/index.js",
+    "mcp_config": {
+      "command": "node",
+      "args": [
+        "${__dirname}/server/index.js"
+      ],
+      "env": {
+        "WRISTWISE_CONNECTION_KEY": "${user_config.connection_key}"
+      }
+    }
+  },
+  "tools": [
+    {
+      "name": "get_summary",
+      "description": "Overall wellness summary (sleep, resting heart rate, trends, anomalies) for the last N days."
+    },
+    {
+      "name": "get_sleep",
+      "description": "Sleep for the last N days: last night plus per-night duration, deep and REM percentages."
+    },
+    {
+      "name": "get_heart",
+      "description": "Resting heart rate trend for the last N days."
+    },
+    {
+      "name": "get_exercise",
+      "description": "Exercise sessions for the last N days: activity type, duration, start and end. Includes per-type totals."
+    },
+    {
+      "name": "search",
+      "description": "Search your WristWise smartwatch health data. Returns ids of matching reports (sleep, heart rate, wellness summary) that can be retrieved with fetch."
+    },
+    {
+      "name": "fetch",
+      "description": "Fetch the full content of a WristWise health report by id returned from search."
+    }
+  ],
+  "tools_generated": false,
+  "user_config": {
+    "connection_key": {
+      "type": "string",
+      "title": "Connection key",
+      "description": "Created in the WristWise app on your phone (Settings → Connect to an AI assistant → Claude Desktop). Starts with wwk_.",
+      "required": true,
+      "sensitive": true
+    }
+  },
+  "privacy_policies": [
+    "https://offsite.ee/wristwise/privacy/"
+  ],
+  "keywords": [
+    "health",
+    "sleep",
+    "heart rate",
+    "exercise",
+    "smartwatch",
+    "wellness",
+    "wearable"
+  ],
+  "license": "MIT",
+  "compatibility": {
+    "platforms": [
+      "darwin",
+      "win32",
+      "linux"
+    ],
+    "runtimes": {
+      "node": ">=18.0.0"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/allie-offsite/wristwise-mcp"
+  }
+}

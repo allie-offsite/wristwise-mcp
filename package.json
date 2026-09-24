@@ -1,0 +1,19 @@
+{
+  "name": "wristwise-mcpb",
+  "version": "0.3.0",
+  "description": "WristWise desktop extension bridge for Claude Desktop",
+  "private": true,
+  "type": "commonjs",
+  "main": "server/index.js",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/allie-offsite/wristwise-mcp"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "test": "node --test"
+  }
+}
