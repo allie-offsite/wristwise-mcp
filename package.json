@@ -1,6 +1,6 @@
 {
   "name": "wristwise-mcpb",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "WristWise desktop extension bridge for Claude Desktop",
   "private": true,
   "type": "commonjs",

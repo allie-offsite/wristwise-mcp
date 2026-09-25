@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-/* WristWise MCP desktop bridge v0.3.0
+/* WristWise MCP desktop bridge v0.3.1
  * Thin stdio proxy: Claude Desktop (stdio JSON-RPC) -> https://mcp-wristwise.offsite.ee/mcp
  * Auth: the WristWise app on the user's phone creates a connection key (wwk_...). The bridge
  * exchanges it for a 1-hour access token. The key works only while that app is installed and
@@ -10,7 +10,7 @@
 
 const readline = require("node:readline");
 
-const VERSION = "0.3.0";
+const VERSION = "0.3.1";
 const BASE = (process.env.WRISTWISE_BASE_URL || "https://mcp-wristwise.offsite.ee").replace(/\/+$/, "");
 const KEY = (process.env.WRISTWISE_CONNECTION_KEY || "").trim();
 const UA = "wristwise-mcpb/" + VERSION + " (node)";

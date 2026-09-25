@@ -2,13 +2,13 @@
   "manifest_version": "0.2",
   "name": "wristwise",
   "display_name": "WristWise",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Ask Claude about your sleep, heart rate, exercise and wellness trends from your smartwatch. Read-only and privacy-first.",
   "long_description": "WristWise connects Claude to the health data your smartwatch already collects (via Health Connect on your Android phone). Ask about last night's sleep, resting heart rate trends, exercise sessions and multi-week wellness summaries. Privacy-first design: your health history stays on your phone; the WristWise service holds no server-side database of your health data. All tools are read-only. Requires the WristWise app from Google Play: it creates the connection key this extension uses, and access stops when the key is revoked or the app is removed.",
   "author": {
     "name": "Offsite OÜ",
     "email": "support@offsite.ee",
-    "url": "https://offsite.ee"
+    "url": "https://github.com/allie-offsite"
   },
   "homepage": "https://offsite.ee/wristwise/",
   "documentation": "https://offsite.ee/wristwise/",
